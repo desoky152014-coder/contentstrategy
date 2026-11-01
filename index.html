@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WAVE WEAR — Content Strategy & Creative Angles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080808;--fg:#fff;--mut:#a8a8a8;--line:#262626;--card:#101010}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--fg);font-family:'Cairo','Segoe UI',Tahoma,sans-serif;line-height:1.9;overflow-x:hidden}
+body.lock{overflow:hidden}
+a{color:inherit;text-decoration:none}
+.en{font-family:'Cairo',Arial,sans-serif;direction:ltr;unicode-bidi:isolate;display:inline-block}
+.wrap{max-width:1180px;margin:auto;padding:0 24px}
+nav{position:fixed;top:0;inset-inline:0;z-index:50;background:rgba(8,8,8,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:900;letter-spacing:.25em;font-size:1.05rem}
+.links{display:flex;gap:28px}
+.links a{color:var(--mut);font-size:.95rem;transition:.3s;position:relative}
+.links a:hover{color:var(--fg)}
+.links a::after{content:"";position:absolute;bottom:-2px;right:0;width:0;height:1px;background:#fff;transition:.3s}
+.links a:hover::after{width:100%}
+.burger{display:none;background:none;border:1px solid var(--line);color:#fff;width:42px;height:42px;font-size:1.3rem;cursor:pointer}
+section{padding:110px 0}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:100px;position:relative;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(3rem,11vw,9rem);font-weight:900;letter-spacing:.08em;line-height:1.05;direction:ltr;text-align:right}
+.hero h2{font-size:clamp(1.1rem,2.6vw,1.8rem);font-weight:300;color:var(--mut);margin:18px 0 8px;direction:ltr;text-align:right;letter-spacing:.12em}
+.tag{font-size:clamp(1.1rem,2.2vw,1.5rem);font-weight:600;direction:ltr;text-align:right;margin-bottom:34px}
+.hero p.intro{max-width:680px;color:var(--mut);font-size:1.1rem;margin-bottom:40px;border-right:2px solid #fff;padding-right:20px}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:15px 34px;border:1px solid #fff;background:#fff;color:#080808;font:inherit;font-weight:700;cursor:pointer;transition:.35s}
+.btn:hover{background:transparent;color:#fff}
+.btn.ghost{background:transparent;color:#fff;border-color:var(--line);padding:10px 22px;font-size:.92rem}
+.btn.ghost:hover{background:#fff;color:#080808;border-color:#fff}
+.sh{margin-bottom:56px;max-width:720px}
+.sh .k{color:var(--mut);letter-spacing:.3em;font-size:.8rem;direction:ltr;text-align:right}
+.sh h2{font-size:clamp(2rem,5vw,3.6rem);font-weight:900;line-height:1.3;margin:8px 0 16px}
+.sh p{color:var(--mut);font-size:1.08rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:var(--bg);padding:34px 30px;display:flex;flex-direction:column;gap:14px;transition:.4s;position:relative;overflow:hidden}
+.card:hover{background:#fff;color:#080808}
+.card:hover .num,.card:hover p,.card:hover .en-t{color:#444}
+.card:hover .btn.ghost{background:#080808;color:#fff;border-color:#080808}
+.num{font-size:3.4rem;font-weight:900;color:#333;line-height:1;direction:ltr;text-align:right;transition:.4s}
+.en-t{color:var(--mut);font-size:.75rem;letter-spacing:.18em;direction:ltr;text-align:right;transition:.4s}
+.card h3{font-size:1.4rem;font-weight:800;line-height:1.5}
+.card p{color:var(--mut);flex:1;font-size:.98rem;transition:.4s}
+.card .btn{align-self:flex-start;margin-top:8px}
+.dark2{background:#fff;color:#080808}
+.dark2 .sh p,.dark2 .sh .k{color:#555}
+.pts{border-top:1px solid #080808}
+.pt{display:grid;grid-template-columns:120px 1fr 1.4fr;gap:24px;padding:34px 0;border-bottom:1px solid #d0d0d0;align-items:start;transition:.3s}
+.pt:hover{padding-inline-start:18px}
+.pt .n{font-size:3rem;font-weight:900;line-height:1;direction:ltr;text-align:right}
+.pt h3 .en{display:block;font-size:.78rem;letter-spacing:.2em;color:#666;font-weight:600}
+.pt h3{font-size:1.5rem;font-weight:800}
+.pt p{color:#333;font-size:1.05rem}
+footer{border-top:1px solid var(--line);padding:70px 0;text-align:center}
+footer .logo{font-size:2rem;margin-bottom:10px}
+footer p{color:var(--mut)}
+footer .tg{color:#fff;font-weight:600;margin-bottom:24px;direction:ltr}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+#top{position:fixed;bottom:24px;left:24px;width:48px;height:48px;border:1px solid #fff;background:#080808;color:#fff;font-size:1.2rem;cursor:pointer;opacity:0;pointer-events:none;transition:.3s;z-index:40}
+#top.show{opacity:1;pointer-events:auto}
+#top:hover{background:#fff;color:#080808}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.mbox{background:var(--card);border:1px solid #333;max-width:860px;width:100%;max-height:92vh;overflow-y:auto;position:relative;animation:pop .4s ease}
+@keyframes pop{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.mhead{position:sticky;top:0;background:var(--card);border-bottom:1px solid var(--line);padding:26px 34px;display:flex;justify-content:space-between;gap:20px;align-items:flex-start;z-index:2}
+.mhead .k{color:var(--mut);font-size:.78rem;letter-spacing:.2em;direction:ltr;text-align:right}
+.mhead h3{font-size:1.7rem;font-weight:900;line-height:1.5}
+.x{background:none;border:1px solid #444;color:#fff;width:42px;height:42px;font-size:1.2rem;cursor:pointer;flex-shrink:0;transition:.3s}
+.x:hover{background:#fff;color:#080808}
+.mbody{padding:10px 34px 34px}
+.blk{padding:24px 0;border-bottom:1px solid var(--line)}
+.blk:last-child{border:0}
+.blk h4{font-size:1.15rem;font-weight:800;margin-bottom:10px}
+.blk p{color:#d6d6d6;margin-bottom:8px}
+.blk ul{list-style:none;margin:8px 0}
+.blk li{position:relative;padding-right:22px;color:#d6d6d6;margin-bottom:6px}
+.blk li::before{content:"";position:absolute;right:0;top:.85em;width:8px;height:1px;background:#fff}
+.mnav{display:flex;justify-content:space-between;padding:18px 34px;border-top:1px solid var(--line);position:sticky;bottom:0;background:var(--card)}
+@media(max-width:860px){
+.burger{display:block}
+.links{position:fixed;top:64px;inset-inline:0;background:#080808;flex-direction:column;gap:0;border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .4s}
+.links.open{max-height:360px}
+.links a{padding:16px 24px;border-top:1px solid var(--line)}
+.pt{grid-template-columns:70px 1fr;gap:12px}
+.pt p{grid-column:1/-1}
+.pt .n{font-size:2.2rem}
+section{padding:80px 0}
+.mhead,.mbody,.mnav{padding-inline:20px}
+.mhead h3{font-size:1.35rem}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav>
+<div class="wrap">
+<a href="#home" class="logo en">WAVE WEAR</a>
+<button class="burger" id="burger" aria-label="القائمة">☰</button>
+<div class="links" id="links">
+<a href="#home">الرئيسية</a>
+<a href="#angles">أفكار المحتوى</a>
+<a href="#summary">الرسائل الأساسية</a>
+<a href="#footer">الختام</a>
+</div>
+</div>
+</nav>
+
+<header class="hero" id="home">
+<div class="wrap">
+<h1 class="rv">WAVE WEAR</h1>
+<h2 class="rv">Content Strategy &amp; Creative Angles</h2>
+<div class="tag rv">Wear Your Vibe. Make It Yours.</div>
+<p class="intro rv">في الجزء ده بنستعرض التوجه الإبداعي للمحتوى الخاص بـ Wave Wear، وإزاي هنقدر نظهر جودة المنتجات، ونشرح فكرة الـ Customization، ونبني علاقة حقيقية بين البراند والجمهور المستهدف.</p>
+<a href="#angles" class="btn rv">استكشف أفكار المحتوى <span>↓</span></a>
+</div>
+</header>
+
+<section id="angles">
+<div class="wrap">
+<div class="sh rv">
+<div class="k">CONTENT ANGLES</div>
+<h2>أفكار المحتوى</h2>
+<p>7 اتجاهات إبداعية للمحتوى، كل واحد فيهم ليه دور محدد في تعريف الجمهور بالبراند، وإظهار قيمة المنتج، وتسهيل قرار الشراء.</p>
+</div>
+<div class="grid" id="grid"></div>
+</div>
+</section>
+
+<section class="dark2" id="summary">
+<div class="wrap">
+<div class="sh rv">
+<div class="k">CREATIVE DIRECTION SUMMARY</div>
+<h2>إيه الرسائل اللي عايزين محتوى Wave Wear يوصلها؟</h2>
+</div>
+<div class="pts" id="pts"></div>
+</div>
+</section>
+
+<footer id="footer">
+<div class="wrap rv">
+<div class="logo en">WAVE WEAR</div>
+<div class="tg en">Wear Your Vibe. Make It Yours.</div>
+<p><span class="en">Content Strategy Presentation</span></p>
+<p><span class="en">2026</span></p>
+</div>
+</footer>
+
+<button id="top" aria-label="العودة للأعلى">↑</button>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+<div class="mbox" id="mbox">
+<div class="mhead">
+<div><div class="k" id="mk"></div><h3 id="mt"></h3></div>
+<button class="x" id="mx" aria-label="إغلاق">✕</button>
+</div>
+<div class="mbody" id="mb"></div>
+<div class="mnav">
+<button class="btn ghost" id="mprev">→ السابق</button>
+<button class="btn ghost" id="mnext">التالي ←</button>
+</div>
+</div>
+</div>
+
+<script>
+const A=[
+{n:"01",en:"PROFESSIONAL PRODUCT PHOTOGRAPHY",t:"تصوير احترافي للمنتجات",s:"صور احترافية للهوديز بتوضح شكل المنتج وجودته وتفاصيله، على 3 أنواع: Flat Lay وModel وClose-up.",b:[
+{h:"الهدف الأساسي",p:["نعمل صور احترافية للهوديز تقدر تظهر بشكل أساسي على الويب سايت، وتوضح شكل المنتج وجودته وتفاصيله بأفضل طريقة ممكنة.","الفكرة دي هتتقسم لـ 3 أنواع من التصوير:"]},
+{h:"أولاً: Flat Lay Photography",l:["تصوير الهوديز من غير وجود أي موديل.","الهودي يكون متحطوط على الأرض أو على ترابيزة بطريقة منظمة واحترافية.","التركيز يكون على شكل الهودي والتصميم والألوان والـ Overall Look.","النوع ده من الصور مهم جداً للويب سايت، لأن العميل محتاج يشوف المنتج بوضوح قبل ما ياخد قرار الشراء."]},
+{h:"ثانياً: Professional Model Photography",l:["تصوير احترافي للهوديز على موديلز.","أهم نقطة هنا إن الموديل يكون شبه الجمهور اللي البراند بيستهدفه فعلاً.","يكون شاب من سن 18 لـ 25 سنة.","يفضل يكون عنده Haircut شبابي زي الـ Mullet أو أي قصة شعر شبابية Trendy.","يكون جسمه Fit وبيظهر بشكل صحي ورياضي.","الأهم إن شخصيته وشكله يكونوا قريبين من الناس اللي هتشتري من البراند.","الهدف إن الشخص اللي بيشوف الصورة يقدر يتخيل نفسه لابس نفس الهودي."]},
+{h:"ثالثاً: Close-up Detail Photography",l:["تصوير تفاصيل الهودي من مسافات قريبة جداً.","إظهار تفاصيل الخامات والـ Fabric Texture.","توضيح جودة الخياطة والتشطيب والـ Finishing.","التركيز على التفاصيل الصغيرة اللي بتفرق في جودة المنتج.","الهدف إن العميل يقدر يشوف الجودة بعينه، مش مجرد إنه يقرأ عنها في وصف المنتج."]},
+{h:"ملاحظة مهمة جداً للـ Photographer",p:["لازم يكون فيه Mood Board متجهز قبل التصوير، ويكون فيه تصور واضح لشكل الصور اللي إحنا عايزين نوصل له.","الـ Mood Board لازم يوضح:"],l:["شكل الـ Flat Lay Photography.","شكل الموديل المطلوب.","الـ Poses وطريقة الوقوف والتصوير.","الإضاءة والـ Background.","أمثلة على الـ Close-up Shots.","الـ Overall Visual Direction."],p2:["ده هيسهل على المصور فهم المطلوب، وهيخلي النتيجة النهائية أقرب للتصور اللي البراند عايز يوصله."]}
+]},
+{n:"02",en:"ONE BASE, THREE OUTFITS",t:"هودي واحد، 3 ستايلات مختلفة",s:"Short-form Videos / Reels بنعرض فيها هودي واحد متنسق مع 3 Outfits مختلفة.",b:[
+{h:"نوع المحتوى",p:["Short-form Videos / Reels."]},
+{h:"الفكرة",p:["نعرض هودي واحد وننسق عليه 3 Outfits مختلفة."]},
+{h:"طريقة التنفيذ",l:["نبدأ بهودي واحد يكون هو الـ Base.","نعمل 3 تنسيقات مختلفة باستخدام نفس الهودي.","كل مرة نغير باقي قطع اللبس والـ Styling.","نستخدم Transitions بين كل Outfit والتاني.","نخلي كل Look مختلف وواضح بصرياً."]},
+{h:"الهدف",p:["نوضح للجمهور إن الهودي ممكن يتلبس بأكتر من طريقة، ويناسب أكتر من Outfit وستايل."]},
+{h:"الهدف التسويقي",p:["ده هيساعد المشاهد يتخيل الهودي مع اللبس الموجود عنده بالفعل، وبالتالي هيسهل عليه قرار الشراء جداً."]}
+]},
+{n:"03",en:"CUSTOMIZATION EDUCATIONAL CONTENT",t:"إزاي تخصص الهودي بتاعك؟",s:"محتوى تعليمي بسيط بيشرح خطوة بخطوة إزاي العميل يخصص الهودي بنفسه، مع مراجعة التصميم قبل الطباعة.",b:[
+{h:"الفكرة",p:["نعمل محتوى تعليمي بسيط يشرح للعميل خطوة بخطوة إزاي يقدر يدخل ويخصص الهودي بتاعه بنفسه."]},
+{h:"طريقة التنفيذ",p:["نعمل فيديوهات Tutorials بتوضح:"],l:["إزاي تبدأ عملية الـ Customization.","إزاي تختار أو تعمل التصميم.","إزاي تخصص الهودي حسب ذوقك وشخصيتك.","إزاي تكمل طلب التخصيص."]},
+{h:"أهم نقطة في تجربة العميل",p:["بعد ما العميل يخلص خطوة الـ Customization، مش هنبدأ الطباعة على طول.","هنعمل الآتي:"],l:["نتواصل مع العميل.","نبعتله Preview للشكل النهائي للهودي بعد التخصيص.","نخليه يراجع التصميم النهائي.","لو حابب يضيف أو يعدل أي حاجة، يقدر يطلب ده.","ناخد منه تأكيد نهائي على شكل التصميم."],p2:["بعد موافقة العميل على الشكل النهائي، نبدأ عملية الطباعة."]},
+{h:"الهدف",p:["نسهل فكرة الـ Customization على العميل ونخليه فاهم كل خطوة بيعملها."]},
+{h:"الهدف التسويقي",p:["نقلل التردد والخوف من فكرة إنه يطلب منتج متصمم مخصوص ليه."]},
+{h:"ميزة إضافية",p:["خطوة مراجعة التصميم والموافقة عليه قبل الطباعة هتقلل جداً احتمالية حدوث سوء تفاهم أو مشاكل بين البراند والعميل."]}
+]},
+{n:"04",en:"UGC CONTENT: QUALITY, FIT & TRUST",t:"الجودة والـ Fit والثقة في المنتج",s:"UGC Videos بتوضح تجربة المنتج الفعلية: الخامة، الـ Fit، الضمان، وحل مشكلة حقيقية عند الجمهور.",b:[
+{h:"نوع المحتوى",p:["UGC Videos باستخدام Creators أو عملاء حقيقيين."]},
+{h:"الفكرة",p:["نعمل محتوى واقعي يوضح تجربة المنتج الفعلية، بدل ما يكون مجرد إعلان بيقول إن المنتج حلو.","المحتوى لازم يغطي:"]},
+{h:"أولاً: Fabric Quality",l:["نظهر الخامة الحقيقية للهودي.","نشرح جودة الخامات المستخدمة.","نستخدم Close-up Shots عشان تفاصيل القماش تكون واضحة.","نوضح ليه الخامة شكلها وجودتها مميزين."]},
+{h:"ثانياً: Fit",l:["نظهر شكل الهودي وهو متلبس على شخص حقيقي.","نوضح الـ Fit بتاعه وشكله على الجسم.","نساعد العميل يتخيل المنتج في الحقيقة مش في الصور بس."]},
+{h:"ثالثاً: Manufacturing Defect Warranty",l:["نوضح إن البراند بيوفر ضمان ضد عيوب الصناعة.","نقدم المعلومة دي كجزء من اهتمام البراند بجودة المنتج وراحة العميل وثقته."]},
+{h:"رابعاً: Problem & Solution Approach",p:["المحتوى لازم يظهر مشكلة حقيقية عند الجمهور ويشرح إزاي Wave Wear بيحلها.","مثال: في ناس كتير بتواجه مشكلة إنها مش بتلاقي لبس بيعبر عن ذوقها وشخصيتها بشكل حقيقي.","وهنا بتيجي فكرة الـ Customization، اللي بتديهم فرصة يعملوا تصميم شبههم ويعبر عنهم."]},
+{h:"خامساً: شرح فكرة الـ Customization",l:["نشرح للناس إزاي التخصيص بيتم.","نوضح إن كل شخص ليه ذوق مختلف عن التاني.","نبرز إن Wave Wear بيدي كل شخص فرصة يختار تصميم يعبر عنه بدل ما يكون محصور في تصميم واحد جاهز."]},
+{h:"الهدف",p:["نبني ثقة في البراند ونظهر جودة المنتج ونرد على الأسئلة والاعتراضات اللي ممكن تمنع العميل من الشراء."]}
+]},
+{n:"05",en:"COMMUNITY, FRIENDSHIP & SELF-EXPRESSION",t:"لبسك بيعبر عنك وعن الشلة بتاعتك",s:"محتوى بيربط البراند بالصحاب واللحظات المشتركة والهوية، عن طريق UGC أو Founder Content أو Voice-over.",b:[
+{h:"أنواع المحتوى",p:["UGC أو Founder Content أو Voice-over."]},
+{h:"الفكرة",p:["نعمل محتوى يربط البراند بحياة الجمهور المستهدف، وبالصحاب واللحظات المشتركة والشخصيات المختلفة.","مثال للفكرة: مجموعة صحاب عايزين يلبسوا حاجة مشتركة بينهم، سواء Theme معين أو فكرة أو تصميم بيعبر عنهم كلهم."]},
+{h:"أمثلة",l:["شلة صحاب عايزين يعملوا Hoodies متطابقة.","مجموعة عايزة تصميم مشترك يعبر عنهم.","مجموعة عايزة Theme معين أو شكل محدد على لبسهم.","أشخاص عايزين يظهروا شخصياتهم المختلفة من خلال لبسهم."],p2:["وهنا Wave Wear يقدر يوفرلهم إمكانية تخصيص التصميم وتحويل الفكرة اللي في دماغهم لقطعة لبس حقيقية."]},
+{h:"التوجه الإبداعي",l:["نظهر لحظات حقيقية بين الصحاب.","نركز على فكرة الانتماء والهوية المشتركة.","نظهر إزاي كل شخص يقدر يعبر عن نفسه من خلال لبسه.","نوضح إن اللبس المخصص ممكن يعبر عن شلة، ذكرى، فكرة أو شخصية معينة."]},
+{h:"الهدف",p:["نبني علاقة عاطفية بين البراند والجمهور المستهدف."]},
+{h:"الهدف التسويقي",p:["نخلي Wave Wear مش مجرد براند بيبيع هدوم، لكن وسيلة الناس يقدروا يعبروا بيها عن نفسهم وعن هويتهم."]}
+]},
+{n:"06",en:"FOUNDER CONTENT & BRAND STORYTELLING",t:"حكاية Wave Wear وبدأنا ليه؟",s:"Founder-led Videos بنحكي فيها قصة البراند والفكرة اللي ورا إنشائه بشكل شخصي وطبيعي.",b:[
+{h:"نوع المحتوى",p:["Founder-led Videos / Talking Head / Storytelling Reels."]},
+{h:"الفكرة",p:["نظهر الـ Founders ونحكي قصة بداية Wave Wear، وإيه الفكرة اللي كانت ورا إنشاء البراند."]},
+{h:"الموضوعات اللي ممكن نتكلم عنها",l:["بدأنا البراند إزاي؟","إيه اللي شجعنا نعمل Wave Wear؟","ليه اخترنا مجال الـ Streetwear؟","ليه اخترنا فكرة الـ Customization بالتحديد؟","إيه المشكلة اللي لاحظناها في السوق؟","عايزين Wave Wear يمثل إيه؟","إيه الـ Vision اللي ورا البراند؟"]},
+{h:"التوجه الإبداعي",p:["المحتوى لازم يكون شخصي وطبيعي وحقيقي.","نبعد عن أسلوب الإعلانات الرسمية أو الكلام المحفوظ.","الـ Founders يتكلموا بصوتهم وطريقتهم الطبيعية."]},
+{h:"الهدف",p:["نبني Brand Identity واضحة ونخلق علاقة إنسانية بين البراند والجمهور."]},
+{h:"الهدف التسويقي",p:["نخلي الناس تفهم القصة والفكرة والدافع اللي ورا Wave Wear، وبالتالي البراند يكون أسهل في التذكر وأقرب للجمهور."]}
+]},
+{n:"07",en:"GRADUATION & SENIORS CUSTOMIZATION",t:"تخصيص هوديز الـ Seniors والتخرج",s:"Seasonal Content موجه لطلبة المدارس في موسم التخرج، بتصميمات مخصصة بالكلمات والأسماء والـ Theme.",b:[
+{h:"نوع المحتوى",p:["Seasonal Content."]},
+{h:"الجمهور المستهدف",p:["طلبة المدارس اللي عندهم حفلات تخرج وعايزين يعملوا لبس مخصص للمناسبة."]},
+{h:"الفكرة",p:["نعمل محتوى يعرض إمكانية تصميم هوديز وقطع ملابس مخصصة للتخرج، عليها كلمات أو أسماء أو عبارات وتصميمات معينة."]},
+{h:"أمثلة",l:["Seniors.","سنة التخرج.","أسماء الـ Class.","أسماء الشلل والمجموعات.","عبارات خاصة بالتخرج.","تصميمات مخصصة لمدرسة أو مجموعة معينة."]},
+{h:"طريقة التنفيذ",l:["نعرض أمثلة لتصميمات Graduation.","نظهر إزاي مجموعة طلبة تقدر تعمل تصميم موحد أو متناسق بينهم.","نشرح إزاي يقدروا يخصصوا الهوديز بالكلمات أو الـ Theme اللي هما عايزينه.","نظهر الشكل النهائي للتصميم بعد ما يتنفذ، وإزاي بيظهر على المجموعة وهي لابساه."]},
+{h:"ملاحظة مهمة جداً بخصوص المواسم",p:["الـ Content Angle ده موسمي، وهنبدأ نستخدمه في موسم التخرج والـ Seniors بس.","مش محتوى مستمر طول السنة."]},
+{h:"الهدف",p:["نستغل الطلب الموسمي من الطلبة اللي محتاجين لبس مخصص لحفلات التخرج والاحتفالات الخاصة بيهم."]}
+]}
+];
+const P=[
+["01","جودة المنتج","PRODUCT QUALITY","نظهر جودة الهودي الحقيقية من خلال التصوير الاحترافي والمحتوى الواقعي."],
+["02","التخصيص","PERSONALIZATION","نوصل للعميل إنه مش مضطر يختار من تصميمات جاهزة بس، لكنه يقدر يعمل حاجة شبه ذوقه."],
+["03","الثقة","TRUST","نوضح جودة الخامات والـ Fit والضمان ضد عيوب الصناعة وخطوة مراجعة التصميم قبل الطباعة."],
+["04","التعبير عن النفس","SELF-EXPRESSION","نظهر إن اللبس وسيلة للتعبير عن الشخصية والصحوبية والهوية."],
+["05","هوية البراند","BRAND IDENTITY","نبني علاقة حقيقية مع الجمهور من خلال Storytelling وقصص الـ Founders والمحتوى الطبيعي."]
+];
+const $=id=>document.getElementById(id);
+const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+$('grid').innerHTML=A.map((a,i)=>`<article class="card rv"><div class="num">${a.n}</div><div class="en-t">ANGLE ${a.n}</div><h3>${esc(a.t)}</h3><p>${esc(a.s)}</p><button class="btn ghost" data-i="${i}">عرض التفاصيل الكاملة</button></article>`).join('');
+$('pts').innerHTML=P.map(p=>`<div class="pt rv"><div class="n">${p[0]}</div><h3>${p[1]}<span class="en">${p[2]}</span></h3><p>${p[3]}</p></div>`).join('');
+let cur=0;
+function show(i){
+cur=(i+A.length)%A.length;const a=A[cur];
+$('mk').textContent='ANGLE '+a.n+' — '+a.en;
+$('mt').textContent=a.t;
+$('mb').innerHTML=a.b.map(x=>{
+let h='<div class="blk"><h4>'+esc(x.h)+'</h4>';
+(x.p||[]).forEach(t=>h+='<p>'+esc(t)+'</p>');
+if(x.l)h+='<ul>'+x.l.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul>';
+(x.p2||[]).forEach(t=>h+='<p>'+esc(t)+'</p>');
+return h+'</div>';}).join('');
+$('mbox').scrollTop=0;
+}
+function open_(i){show(i);$('modal').classList.add('open');document.body.classList.add('lock');$('mx').focus();}
+function close_(){$('modal').classList.remove('open');document.body.classList.remove('lock');}
+$('grid').addEventListener('click',e=>{const b=e.target.closest('button[data-i]');if(b)open_(+b.dataset.i);});
+$('mx').onclick=close_;
+$('modal').addEventListener('click',e=>{if(e.target.id==='modal')close_();});
+$('mprev').onclick=()=>show(cur-1);
+$('mnext').onclick=()=>show(cur+1);
+document.addEventListener('keydown',e=>{
+if(!$('modal').classList.contains('open'))return;
+if(e.key==='Escape')close_();
+if(e.key==='ArrowRight')show(cur-1);
+if(e.key==='ArrowLeft')show(cur+1);
+});
+$('burger').onclick=()=>$('links').classList.toggle('open');
+$('links').addEventListener('click',e=>{if(e.target.tagName==='A')$('links').classList.remove('open');});
+const top_=$('top');
+addEventListener('scroll',()=>top_.classList.toggle('show',scrollY>600),{passive:true});
+top_.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*90+'ms';io.observe(el);});
+</script>
+</body>
+</html>
